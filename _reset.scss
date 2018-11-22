@@ -1,0 +1,20 @@
+// _reset.scss
+
+@mixin box-sizing($box) {
+  -webkit-box-sizing: $box;
+     -moz-box-sizing: $box;
+      -ms-box-sizing: $box;
+          box-sizing: $box;
+}
+
+*{
+  @include box-sizing(border-box);
+}
+
+html,
+body,
+ul,
+ol {
+  margin:  0;
+  padding: 0;
+}

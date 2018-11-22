@@ -1,5 +1,133 @@
+// import reset file
+@import 'reset';
+
+//import fonts from "google fonts"
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Roboto');
+
+$code-block-color: rgb(26, 190, 26);
+$code-background-color: rgb(39, 37, 37);
+$logo-color: rgb(194, 2, 47);
+$text-color: rgb(51, 25, 25);
+$border-color: rgb(234, 253, 251);
+$text-font: 'Roboto Condensed', sans-serif;
+$headings-font: 'Poppins', sans-serif;
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+body{
+  position: relative;
+  line-height: 1.5;
+  font-family: $text-font;
+}
+
 .terminal-code{
   display: block;
-  background-color: black;
-  color: green;
+  width: 80%;
+  margin: 0 0 0 10px;
+  background-color: $code-background-color;
+  color: $code-block-color;
+  @include border-radius(10px);
+}
+
+
+#navbar{
+  position: fixed;
+  width: 260px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: rgb(223, 252, 246);
+  @media screen and (max-width: 800px){
+    position: static;
+    width: 100%;
+    height: 180px;
+  }
+
+  header{
+    font-family: $headings-font;
+    margin: 20px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    border: 2px solid $code-block-color;
+    @include border-radius(100px);
+    background-color: $logo-color;
+    color: #fff;
+    box-shadow: 5px 10px 15px rgba(0,0,0,0.5);
+     @media screen and (max-width: 800px){
+    margin: 5% 10%;
+  }
+  }
+
+  ul{
+    margin: 10px;
+  }
+
+  li{
+    list-style-type: none;
+    border-top: 2px solid $border-color;
+    border-bottom: 2px solid $border-color;
+    border-right: 2px solid $border-color;
+    margin: 2px 0;
+    background-color: rgb(245, 245, 245);
+    @include border-radius(0 35px 35px 0);
+
+    a{
+      text-decoration: none;
+      padding: 20px 5px 20px 10px;
+      display: block;
+      color: $text-color;
+    }
+  }
+}
+
+#main-doc{
+  position: absolute;
+  left: 280px;
+  margin: 10px;
+  @media screen and (max-width: 800px){
+    // position: relative;
+    width: 100%;
+    left: 0;
+    top: 190px;
+  }
+  header{
+    font-family: $headings-font;
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 1% 10%;
+    margin: 10px 10px 0 5px;
+    border-bottom: 3px solid black;
+  }
+
+  h3{
+    font-size: 16px;
+  }
+
+  p{
+    margin-right: 5px;
+  }
+
+  ul{
+    margin-left: 10px;
+
+    li{
+      list-style-type: circle;
+      margin-left: 15px;
+    }
+  }
+
+  img{
+    padding-left: 20%;
+  }
+
 }
